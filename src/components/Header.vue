@@ -4,42 +4,14 @@
           <div class="g-wrap">
               <a id="logo" href=""></a>
               <ul id="nav">
-                  <li class="i-nav w2">
-                      <a href="" class="a-nav on"><span>首页</span><span class="bkg"></span></a>
-                  </li>
-                  <li class="i-nav more">
-                      <a href="" class="a-nav"><span>公司介绍</span><span class="bkg"></span></a>
-                      <span class="sub-nav">
-                          <a href="" class="i-snav">关于我们</a>
-                          <a href="" class="i-snav">企业理念</a>
-                          <a href="" class="i-snav">荣誉资质</a>
+
+                <li :class="['i-nav',{'more':!!nav.sub,'w2': nav.name.length == 2 }]" v-for="nav in home.navs">
+                  <a href="" class="a-nav"><span>{{nav.name}}</span><span class="bkg"></span></a>
+                  <span class="sub-nav" v-if="nav.sub">
+                          <a href="" class="i-snav" v-for="s in nav.sub">{{s.name}}</a>
                       </span>
-                  </li>
-                  <li class="i-nav more">
-                      <a href="" class="a-nav" ><span>新闻咨询</span><span class="bkg"></span></a>
-                      <span class="sub-nav">
-                          <a href="" class="i-snav">公司新闻</a>
-                          <a href="" class="i-snav">行业动态</a>
-                          <a href="" class="i-snav">提取物顾问</a>
-                      </span>
-                  </li>
-                  <li class="i-nav more">
-                      <a href="" class="a-nav" ><span>产品中心</span><span class="bkg"></span></a>
-                      <span class="sub-nav">
-                          <a href="" class="i-snav">茶提取物</a>
-                          <a href="" class="i-snav">客户定制</a>
-                      </span>
-                  </li>
-                  <li class="i-nav more">
-                      <a href="" class="a-nav" ><span>质量管理</span><span class="bkg"></span></a>
-                      <span class="sub-nav">
-                          <a href="" class="i-snav">质量体系</a>
-                          <a href="" class="i-snav">荣誉认证</a>
-                      </span>
-                  </li>
-                  <li class="i-nav"><a href="" class="a-nav" ><span>种植基地</span><span class="bkg"></span></a></li>
-                  <li class="i-nav"><a href="" class="a-nav" ><span>在线办公</span><span class="bkg"></span></a></li>
-                  <li class="i-nav"><a href="" class="a-nav" ><span>联系我们</span><span class="bkg"></span></a></li>
+                </li>
+
               </ul>
               <div id="shop">
                   <a class="btn-lang tmp-unselect" href="javascript:void(0);">中/EN</a>
@@ -50,12 +22,17 @@
 </template>
 
 <script>
+  import {mapState,mapGetters} from "vuex";
 export default {
   props: [],
   data () {
     return {
       headerSty: 'background-color:rgba(255,255,255,0);color:#fff'
     }
+  },
+  computed: {
+    ...mapState(['home']),
+    ...mapGetters(['navs'])
   },
   mounted: function () {
     this.$nextTick(function () {
