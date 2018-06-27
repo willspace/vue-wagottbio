@@ -17,9 +17,9 @@
                 </ul>
                 <ul class="u-cont">
                     <li class="tlt">联系方式</li>
-                    <li>电话：+86-028-88678999</li>
-                    <li>传真：+86-028-88678999</li>
-                    <li>邮箱：info@wagottbio.com</li>
+                    <li>电话：+86-010-12345678</li>
+                    <li>传真：+86-010-12345678</li>
+                    <li>邮箱：info@mail.com</li>
                 </ul>
                 <ul class="u-links">
                     <li class="tlt">友情链接</li>
@@ -34,8 +34,8 @@
                 </ul>
             </div>
             <div class="u-cpy">
-                <p>成都市蒲江县寿安镇迎宾大道628号</p>
-                <p>成都华高生物制品有限公司版权所有 &copy; 2012-{{new Date().getFullYear()}}&nbsp;&nbsp;·&nbsp;&nbsp;浙ICP备17006647号-2</p>
+                <p>北京市xxx路xx大厦</p>
+                <p>xxx公司版权所有 &copy; 2012-{{new Date().getFullYear()}}&nbsp;&nbsp;·&nbsp;&nbsp;浙ICP备17006647号-2</p>
             </div>
         </div>
     </div>
